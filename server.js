@@ -5,7 +5,6 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-app.set('view engine', 'ejs');
 app.use(cors());
 app.use(express.json());
 
@@ -47,9 +46,13 @@ const contactSchema = new mongoose.Schema({
     email: String,
     message: String,
 }, {timestamps: true});
-const Contact = mongoose.model('Contact', contactSchema);
+const Contact = mongoose.model('Contact', contactSchema, 'contact_messages');
 
 //Routes
+app.get('/', async(req,res) => {
+    res.send("Site loaded successfully!");
+})
+
 app.get('/projects', async(req,res) => {
     try{
         const projects = await Project.find();
@@ -68,39 +71,25 @@ app.get('/education', async(req,res) => {
     }
 })
 
-//Adding to databases
-app.post('/projects', async (req, res)=> {
+app.get('/skills', async(req,res) => {
     try{
-        const {title, description, technologies, GitHubLink, image} = req.body;
-        const newProject = new Project({title, description, technologies, GitHubLink, image});
-        await newProject.save();
-        res.json(newProject);
+        const education = await Skill.find();
+        res.json(education);
     } catch(err){
-        res.status(500).json({message: 'Failed to save project!'});
+        res.status(500).json({message: 'Failed to fetch education'});
     }
-});
+})
 
-app.post('/education', async (req, res)=> {
+app.get('/contact', async(req,res) => {
     try{
-        const {institution, degree, gradYear, description} = req.body;
-        const newEducation = new Education({institution, degree, gradYear, description});
-        await newEducation.save();
-        res.json(newEducation);
+        const education = await Contact.find();
+        res.json(education);
     } catch(err){
-        res.status(500).json({message: 'Failed to save education!'});
+        res.status(500).json({message: 'Failed to fetch education'});
     }
-});
+})
 
-app.post('/skills', async (req, res)=> {
-    try{
-        const {skill, proficiency, icon} = req.body;
-        const newSkill = new Skill({skill, proficiency, icon});
-        await newSkill.save();
-        res.json(newSkill);
-    } catch(err){
-        res.status(500).json({message: 'Failed to save skill!'});
-    }
-});
+//Adding to the database
 
 app.post('/contact', async (req, res)=> {
     try{
