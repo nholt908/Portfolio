@@ -1,22 +1,12 @@
 function Header(){
     return(
-        <nav class="">
-            <ul class="">
-                <li class="">
-                    <a class="" href="/">Home</a>
-                </li>
-                <li class="">
-                    <a class="" href="/projects">Projects</a>
-                </li>
-                <li class="">
-                    <a class="" href="/education">Education</a>
-                </li>
-                <li class="">
-                    <a class="" href="/skills">Skills</a>
-                </li>
-                <li class="">
-                    <a class="" href="/contact">Contact Me</a>
-                </li>
+        <nav className="bg-[#BCB8B1] dark:bg-[#8A817C] text-[#463F3A] dark:text-[#F4F3EE]">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/contact">Contact Me</a></li>
             </ul>
         </nav>
     )

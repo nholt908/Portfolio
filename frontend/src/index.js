@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './output.css';
 import App from './App';
 import Header from './header';
 import Footer from './footer';
