@@ -17,7 +17,7 @@ function ProjectsView() {
                 <h2 className='font-bold text-4xl text-center'>Project: {project.title}</h2>
                 <p className='text-xl'>{project.description}</p>
                 <p>Skills Used: {project.technologies}</p>
-                {project.image && <img src={project.image} alt={project.title} className="rounded-3xl max-w-[90%] max-h-[80%]" />}
+                {project.image && <img src={project.image} alt={project.title} className="rounded-3xl max-w-[90%] max-h-[80%] border-3 border-accentcolor" />}
                 <a href={project.GitHubLink} target="_blank" rel='noopener noreferrer' className='underline text-darkcolor dark:text-lightcolor'>GitHub Link</a>
             </div>
         ))}
