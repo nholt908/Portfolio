@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './output.css';
-import IndexView from './IndexView';
-import Header from './header';
-import Footer from './footer';
+import Home from './views/home';
+import Contact from './views/contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <div className='flex flex-col min-h-screen'>
-      <Header />
-      <IndexView />
-      <Footer />
-    </div>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  </BrowserRouter>
 );
