@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body{
+    @apply bg-lightestcolor;
+    @apply text-darkestcolor;
+
+    @apply dark:bg-darkestcolor;
+    @apply dark:text-lightestcolor;
+}
+
+@theme{
+    --color-lightestcolor: #F4F3EE;
+    --color-lightcolor: #CBC7C0;
+    --color-darkcolor: #665F5B;
+    --color-darkestcolor: #463F3A;
+    --color-accentcolor: #E68D72;
+}
