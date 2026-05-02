@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 
 function Contact(){
   useEffect(() => {
-    fetch('http://localhost:5000/contact')
+    fetch('https://portfolio-backend-9zo4.onrender.com/contact')
     .then(res => res.text())
     .then(data => {
       console.log('GET /contact response:', data);
@@ -34,7 +34,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:5000/contact', {
+    const response = await fetch('https://portfolio-backend-9zo4.onrender.com/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

@@ -15,7 +15,7 @@ function EducationView() {
     const [education, setEducation] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/education')
+        fetch('https://portfolio-backend-9zo4.onrender.com/education')
         .then(res => res.json())
         .then(data => setEducation(data))
         .catch(err => console.error('Failed to fetch education:', err));

@@ -15,7 +15,7 @@ function ProjectsView() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects')
+        fetch('https://portfolio-backend-9zo4.onrender.com/projects')
         .then(res => res.json())
         .then(data => setProjects(data))
         .catch(err => console.error('Failed to fetch projects:', err));

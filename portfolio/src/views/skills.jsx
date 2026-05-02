@@ -15,7 +15,7 @@ function SkillsView() {
     const [skills, setSkills] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/skills')
+        fetch('https://portfolio-backend-9zo4.onrender.com/skills')
         .then(res => res.json())
         .then(data => setSkills(data))
         .catch(err => console.error('Failed to fetch skills:', err));

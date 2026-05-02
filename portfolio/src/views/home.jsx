@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 
 function Home(){
   useEffect(() => {
-      fetch('http://localhost:5000/')
+      fetch('https://portfolio-backend-9zo4.onrender.com/')
       .then(res => res.text())
       .then(data => {
         console.log('GET / response:', data);
