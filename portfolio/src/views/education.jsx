@@ -28,6 +28,7 @@ function EducationView() {
                 <h2 className='font-bold text-4xl text-center'>{education.degree}</h2>
                 <p className='text-2xl'>Institution: {education.institution}</p>
                 <p className='text-lg'>Year: {education.gradYear}</p>
+                {education.minor && (<p>Minor: {education.minor}</p>)}
                 <p>Description: {education.description}</p>
             </div>
         ))}
